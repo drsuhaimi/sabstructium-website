@@ -2,141 +2,1215 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SAB Structium</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="SAB Structium - Structural Engineering and Software Solutions">
+          content="SAB Structium - Structural Engineering and Software Solutions. Engineering software, reinforced concrete design and digital solutions for structural engineering.">
+
+    <meta name="keywords"
+          content="SAB Structium, structural engineering, Eurocode 2, reinforced concrete design, EC2 software, engineering software">
+
+    <meta name="author"
+          content="SAB Structium">
+
+    <title>SAB Structium | Structural Engineering & Software Solutions</title>
 
     <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7f9;
-            color: #222;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: #17202a;
+            background: #f7f9fa;
+            line-height: 1.6;
         }
 
-        header {
-            background: #063f3a;
-            color: white;
-            padding: 25px 8%;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 32px;
-        }
-
-        header p {
-            margin: 8px 0 0;
-            font-size: 16px;
-        }
-
-        main {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 25px;
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-
-        .intro {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.7;
-            max-width: 750px;
+        .container {
+            width: min(1120px, 92%);
             margin: auto;
         }
 
-        .cards {
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            background: #064e49;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+
+        .nav {
+            height: 76px;
+
             display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .logo span {
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 15px;
+            color: #ffffff;
+            opacity: 0.92;
+            transition: 0.25s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: #d9f3ef;
+        }
+
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #064e49,
+                    #0b6b64
+                );
+
+            color: white;
+            padding: 105px 0 110px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 5vw, 64px);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: #d8f0ec;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 650px;
+            color: #e7f5f3;
+            margin-bottom: 34px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
             flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #064e49;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.6);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+
+        /* =========================================================
+           HERO CARD
+        ========================================================= */
+
+        .hero-card {
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.18);
+
+            border-radius: 18px;
+            padding: 34px;
+
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-card h3 {
+            font-size: 21px;
+            margin-bottom: 18px;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            color: #eaf6f4;
+        }
+
+        .hero-card li:last-child {
+            border-bottom: none;
+        }
+
+
+        /* =========================================================
+           SECTION
+        ========================================================= */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            max-width: 760px;
+            margin: 0 auto 55px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #063f3b;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #66727a;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about h3 {
+            color: #064e49;
+            font-size: 28px;
+            margin-bottom: 18px;
+        }
+
+        .about p {
+            color: #5e6970;
+            margin-bottom: 16px;
+        }
+
+        .about-highlight {
+            background: #f1f7f6;
+            border-left: 4px solid #0b6b64;
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .about-highlight strong {
+            display: block;
+            color: #064e49;
+            margin-bottom: 6px;
+        }
+
+
+        /* =========================================================
+           CORE AREAS
+        ========================================================= */
+
+        .areas {
+            background: #f7f9fa;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+            gap: 25px;
         }
 
         .card {
             background: white;
-            padding: 30px;
-            width: 280px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            padding: 34px;
+
+            box-shadow:
+                0 8px 28px rgba(0,0,0,0.06);
+
+            border: 1px solid #e8eded;
+
+            transition: 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 14px 35px rgba(0,0,0,0.09);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 10px;
+
+            background: #e5f2f0;
+            color: #064e49;
+
+            font-size: 23px;
+            font-weight: bold;
+
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #063f3a;
+            color: #064e49;
+            margin-bottom: 12px;
+            font-size: 21px;
         }
 
-        footer {
-            margin-top: 80px;
-            padding: 25px;
-            background: #063f3a;
+        .card p {
+            color: #66727a;
+        }
+
+
+        /* =========================================================
+           SOFTWARE
+        ========================================================= */
+
+        .software {
+            background: white;
+        }
+
+        .software-box {
+            background:
+                linear-gradient(
+                    135deg,
+                    #063f3b,
+                    #0b6b64
+                );
+
             color: white;
+            border-radius: 20px;
+            padding: 55px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 55px;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .software-box h3 {
+            font-size: 31px;
+            margin-bottom: 18px;
+        }
+
+        .software-box p {
+            color: #d9efec;
+            margin-bottom: 20px;
+        }
+
+        .software-list {
+            list-style: none;
+        }
+
+        .software-list li {
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.13);
+        }
+
+        .software-list li:last-child {
+            border-bottom: none;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 7px 13px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.13);
+            color: white;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================================================
+           EXPERTISE
+        ========================================================= */
+
+        .expertise {
+            background: #f7f9fa;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .expertise-item {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            border: 1px solid #e5eaea;
+        }
+
+        .expertise-item h3 {
+            color: #064e49;
+            margin-bottom: 10px;
+        }
+
+        .expertise-item p {
+            color: #66727a;
+        }
+
+
+        /* =========================================================
+           FOUNDER
+        ========================================================= */
+
+        .founder {
+            background: white;
+        }
+
+        .founder-box {
+            max-width: 850px;
+            margin: auto;
             text-align: center;
         }
+
+        .founder-box h3 {
+            color: #064e49;
+            font-size: 29px;
+            margin-bottom: 8px;
+        }
+
+        .founder-title {
+            color: #6c777c;
+            margin-bottom: 25px;
+        }
+
+        .founder-box p {
+            color: #59666c;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            background: #f7f9fa;
+        }
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box h2 {
+            color: #064e49;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #66727a;
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #063f3b;
+            color: white;
+            padding: 38px 0;
+            text-align: center;
+        }
+
+        footer .footer-name {
+            font-size: 21px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #cce4e1;
+            font-size: 14px;
+        }
+
+        .copyright {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #aaccc8;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 850px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .software-box {
+                grid-template-columns: 1fr;
+                padding: 38px;
+            }
+
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+                top: 76px;
+                left: 0;
+                right: 0;
+
+                background: #064e49;
+
+                flex-direction: column;
+                gap: 0;
+
+                padding: 10px 0 20px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 12px 6%;
+            }
+
+            .menu-button {
+                display: block;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero {
+                padding: 75px 0;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .software-box {
+                padding: 30px;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
 <header>
-    <h1>SAB Structium</h1>
-    <p>Structural Engineering & Software Solutions</p>
+
+    <div class="container nav">
+
+        <div class="logo">
+            SAB <span>Structium</span>
+        </div>
+
+        <button
+            class="menu-button"
+            onclick="toggleMenu()"
+            aria-label="Open navigation">
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#services">Services</a>
+
+            <a href="#software">Software</a>
+
+            <a href="#expertise">Expertise</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
 </header>
 
-<main>
 
-    <h2>Welcome to SAB Structium</h2>
 
-    <p class="intro">
-        Engineering software and digital solutions for
-        structural engineering, reinforced concrete design,
-        and engineering education.
-    </p>
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-    <div class="cards">
+<section class="hero" id="home">
 
-        <div class="card">
-            <h3>Structural Engineering</h3>
+    <div class="container hero-content">
+
+        <div>
+
+            <h1>
+                SAB <span>Structium</span>
+            </h1>
+
             <p>
-                Structural analysis and reinforced concrete
-                design solutions based on modern engineering standards.
+                Structural Engineering & Software Solutions
             </p>
+
+            <p>
+                Engineering software and digital solutions
+                for structural engineering, reinforced concrete
+                design, and engineering education.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#software"
+                   class="btn btn-primary">
+                    Explore Our Software
+                </a>
+
+                <a href="#about"
+                   class="btn btn-outline">
+                    About SAB Structium
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>EC2 RC Design</h3>
-            <p>
-                Software tools for reinforced concrete design
-                using Eurocode 2.
-            </p>
-        </div>
 
-        <div class="card">
-            <h3>Engineering Software</h3>
-            <p>
-                Digital tools and applications for engineers,
-                contractors and students.
-            </p>
+        <div class="hero-card">
+
+            <h3>
+                Our Focus
+            </h3>
+
+            <ul>
+
+                <li>
+                    Structural Engineering
+                </li>
+
+                <li>
+                    Reinforced Concrete Design
+                </li>
+
+                <li>
+                    Eurocode 2 (EC2)
+                </li>
+
+                <li>
+                    Engineering Software
+                </li>
+
+                <li>
+                    Digital Engineering Solutions
+                </li>
+
+            </ul>
+
         </div>
 
     </div>
 
-</main>
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                About SAB Structium
+            </h2>
+
+            <p>
+                Engineering knowledge combined with
+                modern software development.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+            <div>
+
+                <h3>
+                    Engineering with Purpose
+                </h3>
+
+                <p>
+                    SAB Structium focuses on developing
+                    practical engineering software and
+                    digital tools that help engineers,
+                    students and engineering professionals
+                    solve structural engineering problems.
+                </p>
+
+                <p>
+                    Our approach combines established
+                    structural engineering principles with
+                    modern computational methods and
+                    software technology.
+                </p>
+
+            </div>
+
+
+            <div class="about-highlight">
+
+                <strong>
+                    Our Vision
+                </strong>
+
+                To develop reliable, practical and
+                accessible engineering software that
+                brings structural engineering knowledge
+                into modern digital tools.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SERVICES
+========================================================= -->
+
+<section class="areas" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Core Areas
+            </h2>
+
+            <p>
+                The main areas currently being developed
+                by SAB Structium.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    SE
+                </div>
+
+                <h3>
+                    Structural Engineering
+                </h3>
+
+                <p>
+                    Structural analysis and reinforced
+                    concrete design solutions based on
+                    established engineering principles
+                    and modern standards.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    EC2
+                </div>
+
+                <h3>
+                    EC2 RC Design
+                </h3>
+
+                <p>
+                    Development of reinforced concrete
+                    design tools based on Eurocode 2,
+                    covering structural members and
+                    design calculations.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">
+                    SW
+                </div>
+
+                <h3>
+                    Engineering Software
+                </h3>
+
+                <p>
+                    Digital tools and applications
+                    designed for engineers, contractors,
+                    educators and engineering students.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SOFTWARE
+========================================================= -->
+
+<section class="software" id="software">
+
+    <div class="container">
+
+        <div class="software-box">
+
+            <div>
+
+                <span class="status">
+                    Currently in Development
+                </span>
+
+                <h3>
+                    SAB Structium
+                    Engineering Software
+                </h3>
+
+                <p>
+                    A developing suite of structural
+                    engineering tools designed to support
+                    reinforced concrete design and
+                    engineering calculations.
+                </p>
+
+                <p>
+                    The software is being developed
+                    progressively, with the aim of creating
+                    a practical and integrated engineering
+                    platform.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <ul class="software-list">
+
+                    <li>
+                        Reinforced Concrete Beam Design
+                    </li>
+
+                    <li>
+                        Column Design
+                    </li>
+
+                    <li>
+                        Slab Design
+                    </li>
+
+                    <li>
+                        Foundation Design
+                    </li>
+
+                    <li>
+                        Structural Detailing
+                    </li>
+
+                    <li>
+                        Engineering Utilities
+                    </li>
+
+                    <li>
+                        Future FEM / Structural Analysis Tools
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     EXPERTISE
+========================================================= -->
+
+<section class="expertise" id="expertise">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Engineering Expertise
+            </h2>
+
+            <p>
+                The engineering foundation behind
+                SAB Structium.
+            </p>
+
+        </div>
+
+
+        <div class="expertise-grid">
+
+
+            <div class="expertise-item">
+
+                <h3>
+                    Structural Engineering
+                </h3>
+
+                <p>
+                    Structural analysis, reinforced concrete
+                    design, structural behaviour and
+                    engineering design methodology.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-item">
+
+                <h3>
+                    Eurocode 2
+                </h3>
+
+                <p>
+                    Reinforced concrete design and
+                    development of computational tools
+                    based on Eurocode 2 principles.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-item">
+
+                <h3>
+                    Computational Engineering
+                </h3>
+
+                <p>
+                    Numerical methods, engineering
+                    algorithms, finite element concepts
+                    and computational structural analysis.
+                </p>
+
+            </div>
+
+
+            <div class="expertise-item">
+
+                <h3>
+                    Engineering Education
+                </h3>
+
+                <p>
+                    Development of digital tools and
+                    resources to support engineering
+                    learning and professional development.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOUNDER
+========================================================= -->
+
+<section class="founder">
+
+    <div class="container">
+
+        <div class="founder-box">
+
+            <h3>
+                Engineering Knowledge.
+                Digital Innovation.
+            </h3>
+
+            <div class="founder-title">
+                SAB Structium
+            </div>
+
+            <p>
+                SAB Structium is founded on extensive
+                experience in civil and structural
+                engineering, combined with an interest
+                in computational methods and engineering
+                software development.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-box">
+
+            <h2>
+                Let's Build Better Engineering Tools
+            </h2>
+
+            <p>
+                SAB Structium is currently developing
+                its engineering software platform.
+                More products and engineering tools
+                will be introduced progressively.
+            </p>
+
+            <a
+                href="mailto:info@sabstructium.com"
+                class="btn btn-primary">
+                Contact SAB Structium
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
-    © 2026 SAB Structium. All rights reserved.
+
+    <div class="container">
+
+        <div class="footer-name">
+            SAB Structium
+        </div>
+
+        <p>
+            Structural Engineering & Software Solutions
+        </p>
+
+        <div class="copyright">
+            © 2026 SAB Structium.
+            All rights reserved.
+        </div>
+
+    </div>
+
 </footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+    function toggleMenu() {
+
+        const menu =
+            document.getElementById("navLinks");
+
+        menu.classList.toggle("active");
+
+    }
+
+
+    // Close mobile menu after clicking a link
+
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
+
+            link.addEventListener("click", function() {
+
+                document
+                    .getElementById("navLinks")
+                    .classList.remove("active");
+
+            });
+
+        });
+
+</script>
+
 
 </body>
 </html>
